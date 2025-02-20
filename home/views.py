@@ -51,6 +51,7 @@ def news(request):
 
     return render(request, "news2.html", data)
 
+
 def news_advanced(request):
     news_items = [
         (datetime(2020, 1, 1), "RiffMates now has a news page!"),
