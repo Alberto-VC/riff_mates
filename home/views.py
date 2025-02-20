@@ -1,4 +1,5 @@
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
 
 
 # Create your views here.
@@ -46,3 +47,5 @@ def news(request):
             "RiffMates has its first web page!",
         ]
     }
+
+    return render(request, "news2.html", data)
