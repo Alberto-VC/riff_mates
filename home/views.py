@@ -1,5 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
+from future.backports.datetime import datetime
 
 
 # Create your views here.
@@ -49,3 +50,12 @@ def news(request):
     }
 
     return render(request, "news2.html", data)
+
+def news_advanced(request):
+    news_items = [
+        (datetime(2020, 1, 1), "RiffMates now has a news page!"),
+        (datetime(2020, 1, 2), "RiffMates has its first web page!"),
+        (datetime(2020, 1, 3), "RiffMates has a new logo!"),
+    ]
+
+    return render(request, "news_advanced.html", {"news_items": news_items})
