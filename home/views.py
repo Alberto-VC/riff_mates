@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
 
+
 def credits(request):
     content = "Nicky\nAlberto"
 
@@ -29,9 +30,19 @@ def about(request):
     content = "\n".join(content)
     return HttpResponse(content, content_type="text/html")
 
+
 def version(request):
     data = {
         "version": "0.0.1",
     }
 
     return JsonResponse(data)
+
+
+def news(request):
+    data = {
+        "news": [
+            "RiffMates now has a news page!",
+            "RiffMates has its first web page!",
+        ]
+    }
